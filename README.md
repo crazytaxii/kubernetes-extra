@@ -11,3 +11,10 @@ $ kubectl apply -f ./deploy/metrics-server/
 ```bash
 $ kubectl apply -f ./deploy/prometheus-operator/
 ```
+
+## deploy monitoring
+
+```bash
+$ kubectl create ns monitoring
+$ kubectl apply -f ./deploy/monitoring/
+```
