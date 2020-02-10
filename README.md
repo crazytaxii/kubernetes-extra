@@ -18,3 +18,9 @@ $ kubectl apply -f ./deploy/prometheus-operator/
 $ kubectl create ns monitoring
 $ kubectl apply -f ./deploy/monitoring/
 ```
+
+## deploy flask-demo (ClusterIP)
+
+```bash
+$ kubectl create -f ./deploy/flask-demo/ -n demo
+```
