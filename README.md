@@ -1,5 +1,12 @@
 # kubenetes-extra
 
+## deploy nginx-ingress-controller
+
+```bash
+$ kubectl create ns ingress-nginx
+$ kubectl apply -f ./deploy/nginx-ingress-controller/
+```
+
 ## deploy mectris-server
 
 ```bash
