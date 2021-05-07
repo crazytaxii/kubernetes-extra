@@ -1,0 +1,47 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: flask-demo
+
+---
+# Source: deploy/flask-demo/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-deployment
+  namespace: flask-demo
+  labels:
+    app: flask
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flask
+  template:
+    metadata:
+      labels:
+        app: flask
+    spec:
+      containers:
+        - name: flask
+          image: jcdemo/flaskapp
+          ports:
+            - containerPort: 5000
+
+---
+# Source: deploy/flask-demo/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-service
+  namespace: flask-demo
+spec:
+  selector:
+    app: flask
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: ClusterIP
