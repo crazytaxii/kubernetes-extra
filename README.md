@@ -7,7 +7,7 @@ $ kubectl create ns ingress-nginx
 $ kubectl apply -f ./deploy/nginx-ingress-controller/
 ```
 
-## deploy mectris-server
+## deploy metrics-server
 
 ```bash
 $ kubectl apply -f ./deploy/metrics-server/
@@ -29,5 +29,11 @@ $ kubectl apply -f ./deploy/monitoring/
 ## deploy flask-demo (ClusterIP)
 
 ```bash
-$ kubectl create -f ./deploy/flask-demo/ -n demo
+$ kubectl create -f https://raw.githubusercontent.com/crazytaxii/kubernetes-extra/master/deploy/flask-demo/all.yaml
+```
+
+## deploy local static provisioner
+
+```bash
+$ kubectl create -f https://raw.githubusercontent.com/crazytaxii/kubernetes-extra/master/deploy/local-static-provisioner/all.yaml
 ```
