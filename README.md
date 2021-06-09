@@ -10,7 +10,7 @@ $ kubectl apply -f ./deploy/nginx-ingress-controller/
 ## deploy metrics-server
 
 ```bash
-$ kubectl apply -f ./deploy/metrics-server/
+$ kubectl apply -f https://raw.githubusercontent.com/crazytaxii/kubernetes-extra/master/deploy/metrics-server/all.yaml
 ```
 
 ## deploy prometheus-operator
